@@ -5,5 +5,22 @@
 <body>
   <p>Let's fish!</p>
   <script src="build/bundle.js"></script>
+  <script src="scripts/blotter.min.js"></script>
+  <script src="scripts/materials/channelSplitMaterial.js"></script>
+  <script>
+    var text = new Blotter.Text("Eunsoo", {
+      family : "sans-serif",
+      size : 120,
+      fill : "#333333"
+    });
+
+    var material = new Blotter.ChannelSplitMaterial();
+
+    var blotter = new Blotter(material, { texts : text });
+
+    var scope = blotter.forText(text);
+
+    scope.appendTo(document.body);
+  </script>
 </body>
 </html>
